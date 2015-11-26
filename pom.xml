@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.yesamer</groupId>
   <version>0.0.1-SNAPSHOT</version>
-  <artifactId>taxes-sales</artifactId>
-  <name>Taxes Sales</name>
-  <description>One of the possible solution of the Taxes Sales problem.</description>
+  <artifactId>sales-taxes</artifactId>
+  <name>Sales Taxes</name>
+  <description>One of the possible solution of the Sales Taxes problem.</description>
  
   <dependencies>
   	<dependency>
