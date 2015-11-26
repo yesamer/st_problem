@@ -37,6 +37,9 @@ public class RoundingUtilsTest {
 		assertEquals(new BigDecimal("7.10"), RoundingUtils.round(new BigDecimal("7.11"), INCREMENT, RoundingMode.DOWN));
 		assertEquals(new BigDecimal("7.15"), RoundingUtils.round(new BigDecimal("7.175"), INCREMENT, RoundingMode.HALF_DOWN));
 		assertEquals(new BigDecimal("7.20"), RoundingUtils.round(new BigDecimal("7.175"), INCREMENT, RoundingMode.HALF_UP));
+		assertEquals(new BigDecimal("-7.20"), RoundingUtils.round(new BigDecimal("-7.175"), INCREMENT, RoundingMode.HALF_UP));
+		assertEquals(new BigDecimal("0.00"), RoundingUtils.round(new BigDecimal("0.00"), INCREMENT, RoundingMode.HALF_UP));
+		assertEquals(new BigDecimal("7.175"), RoundingUtils.round(new BigDecimal("7.175"), new BigDecimal("0.0"), RoundingMode.HALF_UP));
 	}
 
 }

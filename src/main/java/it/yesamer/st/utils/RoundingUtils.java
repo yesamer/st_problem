@@ -23,13 +23,7 @@ public class RoundingUtils {
 	 * @return A {@link} BigDecimal rounded up to the nearest increment.
 	 */
 	public static BigDecimal roundUp(BigDecimal value, BigDecimal increment) {
-		if (increment.signum() == 0)
-	        return value;
-	    else {
-	        BigDecimal divided = value.divide(increment, 0, RoundingMode.UP);
-	        BigDecimal result = divided.multiply(increment);
-	        return result;
-	    }
+		return round(value, increment, RoundingMode.UP);
 	}
 	
 	/**
