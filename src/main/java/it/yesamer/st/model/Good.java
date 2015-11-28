@@ -5,6 +5,11 @@ package it.yesamer.st.model;
 
 import java.math.BigDecimal;
 
+import org.apache.log4j.Logger;
+
+import it.yesamer.st.manager.SalesTaxesLabels;
+import it.yesamer.st.utils.StringUtils;
+
 /**
  * This class describes a Good entity, i.e. an Item of the {@link Cart}.
  * 
@@ -12,6 +17,8 @@ import java.math.BigDecimal;
  *
  */
 public class Good {
+
+	private static Logger logger = Logger.getLogger(Good.class);
 
 	/**
 	 * The good's quantity
@@ -35,11 +42,19 @@ public class Good {
 	private BigDecimal price;
 
 	public Good(String quantity, String description, GoodCategory category, boolean imported, String price) {
-		this.quantity = Integer.parseInt(quantity);
-		this.description = description;
-		this.category = category;
-		this.setImported(imported);
-		this.price = new BigDecimal(price);
+		if (StringUtils.validateString(quantity) && StringUtils.validateString(description) &&
+				StringUtils.validateString(price) && category != null) {
+			this.quantity = Integer.parseInt(quantity);
+			this.description = description;
+			this.category = category;
+			this.imported = imported;
+			this.price = new BigDecimal(price);
+		} else {
+			String message = "Wrong parameters passed to Good constructor "
+					+ "(must be not null and not empty)";
+			logger.error(message);
+			throw new IllegalStateException();
+		}
 	}
 
 	/* Getters and Setters */
@@ -68,11 +83,11 @@ public class Good {
 		this.category = category;
 	}
 
-	public Boolean getImported() {
+	public boolean isImported() {
 		return imported;
 	}
 
-	public void setImported(Boolean imported) {
+	public void setImported(boolean imported) {
 		this.imported = imported;
 	}
 
@@ -82,6 +97,17 @@ public class Good {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+
+	/**
+	 * @return A full Good description.
+	 */
+	public String getLongDescription() {
+		StringBuffer longDescription = new StringBuffer();
+		longDescription.append(quantity).append(" ")
+			.append(imported ? SalesTaxesLabels.IMPORTED : "").append(" ")
+			.append(description).append(": ");
+		return longDescription.toString();
 	}
 
 }

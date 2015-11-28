@@ -5,6 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * It test the {@link Cart} entity class behavior.
+ * 
+ * @author Yeser Amer
+ */
 public class CartTest {
 
 	private Cart cart;
@@ -18,6 +23,9 @@ public class CartTest {
 		food = new Good("2", "chocholate bar", GoodCategory.FOOD, false, "5.49");
 	}
 
+	/**
+	 * Testing add() and remove() method of {@link Cart} entity class.
+	 */
 	@Test
 	public void manageGoodsinCartTest() {
 		assertTrue(cart.getGoods().isEmpty());
