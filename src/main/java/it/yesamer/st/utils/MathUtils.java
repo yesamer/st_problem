@@ -7,14 +7,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * It contains useful static method for rounding doubles
+ * It contains useful static methods for Mathematical formulas
  * 
  * @author Yeser Amer
  */
-public class RoundingUtils {
+public class MathUtils {
 
 	// Constructor has been set to private, so it cannot be instantiated.
-	private RoundingUtils() {
+	private MathUtils() {
 	}
 
 	/**
@@ -40,5 +40,16 @@ public class RoundingUtils {
 	        BigDecimal result = divided.multiply(increment);
 	        return result;
 	    }
+	}
+	
+	/**
+	 * It calculates the value of a base and his specified percentage.
+	 * (base * (percentage / 100))
+	 * @param base 
+	 * @param percentage
+	 * @return A {@link BigDecimal} which contains the percentage value.
+	 */
+	public static BigDecimal percentage(BigDecimal base, BigDecimal percentage){
+	    return round(base.multiply(percentage).divide(new BigDecimal(100)), new BigDecimal("0.01"), RoundingMode.HALF_UP);
 	}
 }
