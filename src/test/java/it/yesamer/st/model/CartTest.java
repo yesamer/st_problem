@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * It test the {@link Cart} entity class behavior.
+ * It tests the {@link Cart} entity class behavior.
  * 
  * @author Yeser Amer
  */
