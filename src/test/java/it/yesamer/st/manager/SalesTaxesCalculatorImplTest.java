@@ -10,7 +10,7 @@ import it.yesamer.st.model.Good;
 import it.yesamer.st.model.GoodCategory;
 
 /**
- * It test the {@link SalesTaxesCalculatorImpl} entity class behavior.
+ * It tests the {@link SalesTaxesCalculatorImpl} entity class behavior.
  * 
  * @author Yeser Amer
  */
@@ -24,7 +24,7 @@ public class SalesTaxesCalculatorImplTest {
 		SalesTaxesCalculator calculator = new SalesTaxesCalculatorImpl();
 		assertEquals(new BigDecimal("0"), calculator.calculateGoodTaxes(new Good("1", "book", GoodCategory.BOOK, false, "12.49")));
 		assertEquals(new BigDecimal("1.50"), calculator.calculateGoodTaxes(new Good("1", "music CD", GoodCategory.GENERIC, false, "14.99")));
-		assertEquals(new BigDecimal("7.13"), calculator.calculateGoodTaxes(new Good("1", "bottle of parfume", GoodCategory.GENERIC, true, "47.50")));
+		assertEquals(new BigDecimal("7.15"), calculator.calculateGoodTaxes(new Good("1", "bottle of parfume", GoodCategory.GENERIC, true, "47.50")));
 	}
 
 }

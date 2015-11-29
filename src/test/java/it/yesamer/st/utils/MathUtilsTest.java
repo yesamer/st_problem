@@ -48,11 +48,11 @@ public class MathUtilsTest {
 	@Test
 	public void percentageTest() {
 		assertEquals(new BigDecimal("10.00"), MathUtils.percentage(new BigDecimal("100"), new BigDecimal("10")));
-		assertEquals(new BigDecimal("7.13"), MathUtils.percentage(new BigDecimal("47.50"), new BigDecimal("15")));
-		assertEquals(new BigDecimal("0.56"), MathUtils.percentage(new BigDecimal("11.25"), new BigDecimal("5")));
-		assertEquals(new BigDecimal("-94.90"), MathUtils.percentage(new BigDecimal("-123.25"), new BigDecimal("77")));
+		assertEquals(new BigDecimal("7.15"), MathUtils.percentage(new BigDecimal("47.50"), new BigDecimal("15")));
+		assertEquals(new BigDecimal("0.60"), MathUtils.percentage(new BigDecimal("11.25"), new BigDecimal("5")));
+		assertEquals(new BigDecimal("-94.95"), MathUtils.percentage(new BigDecimal("-123.25"), new BigDecimal("77")));
 		assertEquals(new BigDecimal("-4.80"), MathUtils.percentage(new BigDecimal("19.19"), new BigDecimal("-25")));
-		assertEquals(new BigDecimal("639.26"), MathUtils.percentage(new BigDecimal("765.21"), new BigDecimal("83.54")));
+		assertEquals(new BigDecimal("639.30"), MathUtils.percentage(new BigDecimal("765.21"), new BigDecimal("83.54")));
 	}
 
 }

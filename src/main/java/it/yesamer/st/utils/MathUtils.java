@@ -50,6 +50,6 @@ public class MathUtils {
 	 * @return A {@link BigDecimal} which contains the percentage value.
 	 */
 	public static BigDecimal percentage(BigDecimal base, BigDecimal percentage){
-	    return round(base.multiply(percentage).divide(new BigDecimal(100)), new BigDecimal("0.01"), RoundingMode.HALF_UP);
+	    return roundUp(base.multiply(percentage).divide(new BigDecimal(100)), new BigDecimal("0.05"));
 	}
 }

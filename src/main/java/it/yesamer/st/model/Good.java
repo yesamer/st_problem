@@ -105,7 +105,7 @@ public class Good {
 	public String getLongDescription() {
 		StringBuffer longDescription = new StringBuffer();
 		longDescription.append(quantity).append(" ")
-			.append(imported ? SalesTaxesLabels.IMPORTED : "").append(" ")
+			.append(imported ? SalesTaxesLabels.IMPORTED + " " : "")
 			.append(description).append(": ");
 		return longDescription.toString();
 	}
